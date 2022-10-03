@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: demoapp-stateful-parallel
+spec:
+  selector:
+    matchLabels:
+      app: demoapp-stateful-parallel
+  serviceName: "demoapp-stateful-service"
+  replicas: 5
+  podManagementPolicy: "Parallel"
+  template:
+    metadata:
+      labels:
+        app: demoapp-stateful-parallel
+    spec:
+      containers:
+      - name: demoapp
+        image: tuxotron/demoapp:v1
+        ports:
+        - containerPort: 8080

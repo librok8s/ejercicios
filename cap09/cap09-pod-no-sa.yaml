@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cap09-pod-no-sa
+spec:
+  automountServiceAccountToken: false
+  containers:
+  - image: alpine/k8s:1.22.6
+    name: alpine-k8s
+    command: [ "/bin/ash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]

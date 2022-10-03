@@ -1,0 +1,9 @@
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cap09-clusterrole-core-apps
+rules:
+- apiGroups: ["", "apps"]
+  resources: ["*"]
+  verbs: ["*"]
+

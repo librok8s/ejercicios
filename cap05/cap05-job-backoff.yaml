@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: backoff
+spec:
+  backoffLimit: 4
+  template:
+    metadata:
+      name: backoff
+    spec:
+      containers:
+      - name: error
+        image: busybox
+        command:
+         - "/bin/sh"
+         - "-c"
+         - "sleep 2; exit -1"
+      restartPolicy: Never

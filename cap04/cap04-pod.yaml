@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-cap04
+spec:
+  hostname: nombre-pod
+  containers:
+  - image: nginx
+    name: nginx

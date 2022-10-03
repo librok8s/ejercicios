@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demoapp-node-affinity
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: disco
+            operator: In
+            values:
+            - ssd
+            - nvram
+  containers:
+  - name: demoapp-node-affinity
+    image: tuxotron/demoapp:v1
+

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demoapp-pod-toleration-all
+spec:
+  tolerations:
+  - operator: "Exists"
+  containers:
+  - name: demoapp-pod-toleration-all
+    image: tuxotron/demoapp:v1
+

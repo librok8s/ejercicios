@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: miquota
+  namespace: cuotas
+spec:
+  hard:
+    count/pods: "1"
+    count/secrets: "1"
+    limits.memory: 1Gi

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ejemplo-rs
+  labels:
+    app: demoapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demoapp
+      ver: v1
+  template:
+    metadata:
+      labels:
+        app: demoapp
+        ver: v1
+    spec:
+      containers:
+      - name: demoapp
+        image: tuxotron/demoapp:v1
+        ports:
+        - containerPort: 8080

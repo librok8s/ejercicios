@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: desarrolladores-core-apps
+subjects:
+- kind: Group
+  name: desarrolladores
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: cap09-clusterrole-core-apps
+  apiGroup: rbac.authorization.k8s.io
+

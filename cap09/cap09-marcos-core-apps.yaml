@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: marcos-core-apps
+subjects:
+- kind: User
+  name: marcos
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: cap09-core-apps
+  apiGroup: rbac.authorization.k8s.io
+

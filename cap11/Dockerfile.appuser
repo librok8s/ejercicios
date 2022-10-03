@@ -1,0 +1,12 @@
+# Dockerfile.appuser
+
+FROM python:3.8
+
+RUN groupadd -g 1000 appgrp && \
+    useradd -g 1000 -l -m -u 1000 appuser
+USER 1000
+
+EXPOSE 8000
+
+ENTRYPOINT ["python3", "-m", "http.server"]
+

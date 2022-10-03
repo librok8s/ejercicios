@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cap10-visits
+  labels:
+    app: visits
+spec:
+  selector:
+    matchLabels:
+      app: visits
+  template:
+    metadata:
+      labels:
+        app: visits
+    spec:
+      containers:
+        - image: tuxotron/visits
+          name: visits
+          imagePullPolicy: IfNotPresent
+          command:
+            - "/app"
+          env:
+            - name: REDIS_SERVER
+              value: cap10-redis-svc
+          ports:
+            - containerPort: 8080
+              name: visits

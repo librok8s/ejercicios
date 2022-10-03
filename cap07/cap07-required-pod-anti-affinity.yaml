@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demoapp-pod-antiaffinity
+spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: run
+            operator: In
+            values:
+            - redis
+        topologyKey: kubernetes.io/hostname
+  containers:
+  - name: demoapp-pod-antiaffinity
+    image: tuxotron/demoapp:v1
+

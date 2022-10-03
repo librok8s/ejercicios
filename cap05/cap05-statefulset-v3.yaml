@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: demoapp-stateful
+spec:
+  selector:
+    matchLabels:
+      app: demoapp-stateful
+  serviceName: "demoapp-stateful-service"
+  replicas: 3
+  updateStrategy:
+    rollingUpdate:
+      partition: 2
+  template:
+    metadata:
+      labels:
+        app: demoapp-stateful
+    spec:
+      containers:
+      - name: demoapp
+        image: tuxotron/demoapp:v3
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demoapp-pod-toleration
+spec:
+  tolerations:
+  - key: "arch"
+    operator: "Equal"
+    value: "arm64"
+    effect: "NoSchedule"
+  containers:
+  - name: demoapp-pod-toleration
+    image: tuxotron/demoapp:v1
+

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cap07-nodeselector
+spec:
+  containers:
+  - image: tuxotron/demoapp:v1
+    name: cap07-nodeselector
+  nodeSelector: 
+    gpu: nvidia
+

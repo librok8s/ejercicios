@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: limites-por-defecto
+spec:
+  limits:
+  - default:
+      memory: 512Mi
+      cpu: 100m
+    type: Container

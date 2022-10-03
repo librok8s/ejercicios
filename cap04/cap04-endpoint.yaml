@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: servicio-sin-selector
+subsets:
+  - addresses:
+      - ip: 10.244.1.92
+    ports:
+      - port: 8080

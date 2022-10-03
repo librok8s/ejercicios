@@ -1,0 +1,10 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: permiso-todo-core
+  namespace: marcos
+rules:
+- apiGroups: [""]
+  resources: ["*"]
+  verbs: ["*"]
+

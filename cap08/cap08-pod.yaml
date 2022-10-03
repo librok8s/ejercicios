@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cap08-pod
+spec:
+  volumes:
+    - name: pod-vol
+      persistentVolumeClaim:
+        claimName: cap08-pvc
+  containers:
+  - image: nginx
+    name: cap08-pod
+    volumeMounts:
+    - mountPath: /data
+      name: pod-vol
+

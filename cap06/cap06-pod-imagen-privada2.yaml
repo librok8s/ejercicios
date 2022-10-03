@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cap06-imagen-privada
+spec:
+  imagePullSecrets:
+    - name: cap06-docker-secret
+  containers:
+  - name: lab
+    image: tuxotron/lab:v1

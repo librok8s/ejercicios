@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: demoapp-stateful-ondelete
+spec:
+  selector:
+    matchLabels:
+      app: demoapp-stateful-ondelete
+  serviceName: "demoapp-stateful-service"
+  replicas: 3
+  updateStrategy: 
+    type: OnDelete
+  template:
+    metadata:
+      labels:
+        app: demoapp-stateful-ondelete
+    spec:
+      containers:
+      - name: demoapp
+        image: tuxotron/demoapp:v1
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cap11-appescalation
+spec:
+  containers:
+  - image: appsudo
+    name: cap11-appescalation
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 8000
+    securityContext:
+      runAsNonRoot: true

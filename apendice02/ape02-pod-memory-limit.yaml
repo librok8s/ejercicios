@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ape02-pod-memory-limit
+spec:
+  containers:
+  - name: mysql
+    image: mysql
+    env:
+      - name: MYSQL_RANDOM_ROOT_PASSWORD
+        value: "true"
+    resources:
+      limits:
+        memory: "25Mi"

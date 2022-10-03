@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cap06-configmap
+data:
+  # propiedades
+  db_ip: 10.1.5.10
+  lang: ES
+
+  # fichero
+  log4j.properties: |
+    log4j.rootLogger = ERROR, FILE
+    log4j.appender.FILE=org.apache.log4j.FileAppender
+

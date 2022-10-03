@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cap06-configmap-pod-args
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: ["echo", "La IP del Host de la base de datos es: $(DATABASE_HOST)" ]
+    env:
+    - name: DATABASE_HOST
+      valueFrom: 
+        configMapKeyRef:
+          key: db_ip
+          name: cap06-configmap 
+  restartPolicy: Never

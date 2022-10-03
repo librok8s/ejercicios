@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cap11-apprunasuser-nogroup
+spec:
+  containers:
+  - image: app
+    name: cap11-apprunasuser-nogroup
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 8000
+    securityContext:
+      runAsUser: 1001

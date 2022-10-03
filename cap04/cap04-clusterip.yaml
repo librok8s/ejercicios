@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cap04-clusterip
+spec:
+  type: ClusterIP
+  selector:
+    app: myapp
+    ver: "1"
+  ports:
+    - port: 80
+      targetPort: 8080

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cap07-nodeselector2
+spec:
+  containers:
+  - image: tuxotron/demoapp:v1
+    name: cap07-nodeselector2
+  nodeSelector: 
+    disco: ssd
